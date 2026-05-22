@@ -1,0 +1,17 @@
+I need to build a highly professional, deterministic developer portfolio using Laravel (PHP), Tailwind CSS via Vite, and Vanilla Three.js. I want to strictly avoid messy 'AI generated' aesthetics; the UI must be clean, use standard semantic HTML, proper CSS grids, and precise whitespace matching a premium dark mode theme (bg-[#0A0F1C]).
+
+Please structure the project with the following requirements:
+
+1. GitHub API Backend Integration:
+Create a Laravel Controller (PortfolioController). Write a method to fetch my public GitHub repositories using Laravel's Http client. Filter for 4-6 significant projects. Crucially, wrap this API call in a Cache::remember block for 1 hour to ensure page speed and avoid rate-limiting. Pass this cached data to the main Blade view.
+
+2. Hero Section with 3D Cursor Tracking (Blade + Vite):
+Design a full-screen hero section in Blade. Set up a <canvas id="robot-canvas"> centrally. Provide a clean, modular Vanilla JavaScript file (to be bundled with Vite) that uses Three.js. This script should load a basic placeholder .glb primitive model (which I will later replace with a robot). Implement an event listener on the window's mouse movements and map the normalized coordinates to the rotation.x and rotation.y of the 3D model, applying linear interpolation (lerp) so the movement is smooth.
+
+3. Clean UI Components (Tailwind):
+
+    Projects Section: Use CSS Grid (grid-cols-1 md:grid-cols-3) to display the GitHub data passed from the controller. Style the project cards using subtle glassmorphism (bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl). Include standard typography for repository names, descriptions, and tech indicators.
+
+    About Section: Build a deterministic two-column layout. One side introduces me clearly as an 11th-grade Software Engineering student. The other side showcases a grid of my technical focus areas: C++, Node.js, PHP, and SQL using simple, clean monochrome badges.
+
+Please output the Laravel Controller code, the necessary route definition, the Blade layout structure (including the Tailwind classes), and the Vanilla Three.js tracking logic. Keep the styling extremely disciplined.
